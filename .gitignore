@@ -1,0 +1,8 @@
+#ignore ides
+\.idea
+
+#ignore vendors
+vendor
+
+#composer
+composer\.lock

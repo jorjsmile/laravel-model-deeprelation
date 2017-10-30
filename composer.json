@@ -1,0 +1,34 @@
+{
+    "name": "jorjsmile/laravel-model-deeprelation",
+    "description": "A trait that will bring methods for deepSave, deepFill into Eloquent/Model",
+    "type": "extension",
+    "minimum-stability" : "stable",
+    "require": {
+        "ext-sqlite3" : "*",
+        "laravel/framework": "5.5.*",
+        "orchestra/testbench": "3.5.*"
+    },
+    "require-dev":{
+	"phpunit/phpunit": "~6.0"
+     },
+    "autoload": {
+        "classmap":[
+             "tests"
+        ],
+        "psr-4" : {
+            "Jorjsmile\\LaravelModelDeepRelation\\" :  "src"
+        }
+    },
+    "autoload-dev":{
+       "psr-4" : {
+         "Jorjsmile\\LaravelModelDeepRelation\\" :  "src"
+       }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "George Katernyak",
+            "email": "jorjsmile@gmail.com"
+        }
+    ]
+}
