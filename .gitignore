@@ -6,3 +6,6 @@ vendor
 
 #composer
 composer\.lock
+
+#test-suite
+build
