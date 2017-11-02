@@ -7,4 +7,4 @@ Install:
 > composer require jorjsmile/laravel-model-deeprelation
 
 Documentation:
-Comming soon
+Feel and save model with it's relations
