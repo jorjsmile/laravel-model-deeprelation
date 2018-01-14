@@ -326,13 +326,14 @@ trait TDeepRelation {
          * @var Relation $relation
          */
         $relation = $this->$name();
+        $default = $this->relationLoaded($name)? $this->$name : null;
 
         switch (get_class($relation)) {
 
             case BelongsTo::class :
             case HasOne::class :
 
-                $this->setRelation( $name, $this->resolveRelated($relation, $data) );
+                $this->setRelation( $name, $this->resolveRelated($relation, $data, $default) );
                 break;
 
             case HasMany::class :
@@ -407,9 +408,10 @@ trait TDeepRelation {
      *
      * @param Relation $relation
      * @param array $data
+     * @param EloquentModel $default
      * @return EloquentModel
      */
-    private function resolveRelated($relation, $data) : EloquentModel
+    private function resolveRelated($relation, $data, $default=null) : EloquentModel
     {
         if ($data instanceof EloquentModel)
             return $data;
@@ -417,7 +419,7 @@ trait TDeepRelation {
         /**
          * @var null|TDeepRelation|EloquentModel $object
          */
-        $object = null;
+        $object = $default;
 
         if(!$object){
 
